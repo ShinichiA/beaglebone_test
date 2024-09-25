@@ -1,0 +1,17 @@
+/dts-v1/;
+
+/ {
+    gpio-led {
+        compatible = "gpio-led";
+        gpio-led = <&gpio2 1 GPIO_ACTIVE_HIGH>; /* GPIO cho LED, hoạt động ở mức cao và để lấy ra chân pin từ gpio-led from driver*/
+        label = "gpio-led"; /* Tên của LED */
+	status = "okay";
+    };
+
+	gpio-isr {
+        compatible = "gpio-isr";
+        gpio-isr = <&gpio1 13 GPIO_ACTIVE_HIGH>; /* GPIO cho LED, hoạt động ở mức cao */
+        label = "gpio-isr"; /* Tên của LED */
+	status = "okay";
+    };
+};
